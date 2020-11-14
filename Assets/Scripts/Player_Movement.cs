@@ -21,7 +21,7 @@ public class Player_Movement : MonoBehaviour
 
     void Update()
     {
-        
+        Debug.Log(isGrounded);
     }
 
     void FixedUpdate()
