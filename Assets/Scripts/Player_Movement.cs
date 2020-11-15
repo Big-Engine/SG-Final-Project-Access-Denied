@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
 {
-    [SerializeField] Rigidbody2D playerRB;
+    [SerializeField] Rigidbody2D playerRB = null;
+    [SerializeField] SpriteRenderer spriteRenderer = null;
 
-    [SerializeField] float speed; // 10 works well
-    [SerializeField] float jumpForce; // should be above 200
+    // Player Rigidbidy gravity should be more than 3, adjust variables below accordingly
 
-    [SerializeField] float horizontalDrag; // 5 works well
+    [SerializeField] float speed = 0; // 22 works well
+    [SerializeField] float jumpForce = 0; // should be above 600
+
+    [SerializeField] float horizontalDrag = 0; // 5 works well
 
     private bool isGrounded = false;
     private bool isMoving = false;
@@ -21,7 +24,7 @@ public class Player_Movement : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(isGrounded);
+        FlipSprite();
     }
 
     void FixedUpdate()
@@ -29,7 +32,7 @@ public class Player_Movement : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal") != 0)
         {
             isMoving = true;
-            ToggleHorizontalDrag(0);
+            ToggleHorizontalDrag(horizontalDrag/2);
             Move();
         }
         else
@@ -81,7 +84,20 @@ public class Player_Movement : MonoBehaviour
         }
         else
         {
-            playerRB.AddForce(new Vector2(0, .5f) * jumpForce);
+            playerRB.AddForce(new Vector2(0, .75f) * jumpForce);
+        }
+    }
+
+    private void FlipSprite()
+    {
+        if(Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+        {
+            spriteRenderer.flipX = false;
+        }
+
+        if(Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+        {
+            spriteRenderer.flipX = true;
         }
     }
 }
