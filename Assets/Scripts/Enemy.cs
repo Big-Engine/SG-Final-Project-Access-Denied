@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int health;
+
+    public void Start()
     {
-        
+        health = 3;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnTriggerEnter2D(Collider2D collision)//needs testing
     {
-        
+        if (collision.tag == "bullet")
+        {
+            health--;
+            Destroy(collision.gameObject);
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }
