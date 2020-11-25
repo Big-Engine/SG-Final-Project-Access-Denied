@@ -32,10 +32,12 @@ public class EnemyGroundAI : MonoBehaviour
         {
             if (Vector2.Distance(transform.position, position1.transform.position)< 1)
             {
+                gameObject.GetComponent<SpriteRenderer>().flipX = true;
                 target = position2.transform.position;
             }
             else if(Vector2.Distance(transform.position, position2.transform.position) < 1)
             {
+                gameObject.GetComponent<SpriteRenderer>().flipX = false;
                 target = position1.transform.position;
             }
         }

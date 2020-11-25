@@ -23,7 +23,7 @@ public class Enemy_Shooting : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!gameObject.GetComponent<SpriteRenderer>().flipX)
+        if (gameObject.GetComponent<SpriteRenderer>().flipX)
         {
             hit = Physics2D.Raycast(transform.position, Vector2.right);
 
