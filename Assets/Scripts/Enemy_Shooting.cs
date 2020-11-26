@@ -8,6 +8,10 @@ public class Enemy_Shooting : MonoBehaviour
 
     [SerializeField] Transform bulletPrefab = null;
 
+    [SerializeField] Transform firePoint = null;
+
+    [SerializeField] SpriteRenderer enemyRenderer = null;
+
     RaycastHit2D hit;
     // Start is called before the first frame update
     void Start()
@@ -18,32 +22,29 @@ public class Enemy_Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void FixedUpdate()
     {
-        if (gameObject.GetComponent<SpriteRenderer>().flipX)
+        if (enemyRenderer.flipX)
         {
-            hit = Physics2D.Raycast(transform.position, Vector2.right);
+            hit = Physics2D.Raycast(transform.position, Vector2.right, 5f);
 
-            if (hit.collider.name == "Player")
+            if (hit.collider.tag == "Player")
             {
-                Instantiate(bulletPrefab, transform.position, Quaternion.identity, transform);
+                Instantiate(bulletPrefab, firePoint.position, Quaternion.identity, transform);
             }
-
-            Debug.DrawRay(transform.position, Vector2.right, Color.red);
         }
         else
         {
-            hit = Physics2D.Raycast(transform.position, Vector2.left);
+            hit = Physics2D.Raycast(transform.position, Vector2.left, 5f);
 
-            if(hit.collider.name == "Player")
+            if (hit.collider.tag == "Player")
             {
-                Instantiate(bulletPrefab, transform.position, Quaternion.identity, transform);
+                Instantiate(bulletPrefab, firePoint.position, Quaternion.identity, transform);
             }
 
-            Debug.DrawRay(transform.position, Vector2.left, Color.red);
         }
     }
 }

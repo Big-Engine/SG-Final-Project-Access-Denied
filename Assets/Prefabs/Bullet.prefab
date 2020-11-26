@@ -146,3 +146,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletRB: {fileID: 8809466198600712004}
   bulletSpeed: 500
+  selfDestructTimer: 2

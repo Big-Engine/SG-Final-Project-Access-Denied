@@ -6,16 +6,30 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] Rigidbody2D bulletRB = null;
     [SerializeField] float bulletSpeed = 0;
+    [SerializeField] float selfDestructTimer = 2;
+
     // Start is called before the first frame update
     void Awake()
     {
-        if (!transform.parent.GetComponent<SpriteRenderer>().flipX)
+        if (transform.root.GetComponent<SpriteRenderer>().flipX)
         {
-            bulletRB.AddForce(Vector2.right * bulletSpeed);
+            bulletRB.AddForce(Vector2.left * bulletSpeed);
         }
         else
         {
-            bulletRB.AddForce(Vector2.left * bulletSpeed);
+            bulletRB.AddForce(Vector2.right * bulletSpeed);
+        }
+    }
+
+    private void Update()
+    {
+        if(selfDestructTimer <= 0)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            selfDestructTimer -= Time.deltaTime;
         }
     }
 
