@@ -14,7 +14,7 @@ public class Player_Movement : MonoBehaviour
 
     [SerializeField] float horizontalDrag = 0; // 5 works well
 
-    private bool isGrounded = false;
+    [SerializeField] private bool isGrounded = false;
     private bool isMoving = false;
 
     void Start()
@@ -52,7 +52,7 @@ public class Player_Movement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Ground")
+        if (collision.gameObject.tag == "Ground")
         {
             isGrounded = true;
         }
@@ -60,7 +60,7 @@ public class Player_Movement : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Ground")
+        if (collision.gameObject.tag == "Ground")
         {
             isGrounded = false;
         }
