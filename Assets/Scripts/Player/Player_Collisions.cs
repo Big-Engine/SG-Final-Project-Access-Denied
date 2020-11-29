@@ -15,7 +15,7 @@ public class Player_Collisions : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            int magnitude = 1500;
+            int magnitude = 1500; // Knock back force
 
             Vector2 force = transform.position - other.transform.position;
 

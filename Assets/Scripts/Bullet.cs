@@ -13,11 +13,11 @@ public class Bullet : MonoBehaviour
     {
         if (transform.root.GetComponent<SpriteRenderer>().flipX)
         {
-            bulletRB.AddForce(Vector2.left * bulletSpeed);
+            bulletRB.AddForce(Vector2.right * bulletSpeed);
         }
         else
         {
-            bulletRB.AddForce(Vector2.right * bulletSpeed);
+            bulletRB.AddForce(Vector2.left * bulletSpeed);
         }
     }
 

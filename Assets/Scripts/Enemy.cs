@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int health;
+    [SerializeField] int health;
 
     public void Start()
     {
-        health = 3;
+        health = 2;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)//needs testing
     {
-        if (collision.tag == "bullet")
+        if (collision.tag == "Bullet")
         {
+            Debug.Log("Enemy hit");
             health--;
             Destroy(collision.gameObject);
             if (health <= 0)
