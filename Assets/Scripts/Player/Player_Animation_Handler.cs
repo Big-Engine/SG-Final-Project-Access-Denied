@@ -65,6 +65,9 @@ public class Player_Animation_Handler : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-
+        if(collision.gameObject.tag == "Ground")
+        {
+            isGrounded = false;
+        }
     }
 }

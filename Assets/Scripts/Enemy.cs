@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)//needs testing
     {
-        if (collision.tag == "Bullet")
+        if (collision.tag == "Player_Bullet")
         {
             Debug.Log("Enemy hit");
             health--;

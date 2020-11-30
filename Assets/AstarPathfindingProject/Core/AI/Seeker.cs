@@ -19,13 +19,13 @@ namespace Pathfinding {
 	[AddComponentMenu("Pathfinding/Seeker")]
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_seeker.php")]
 	public class Seeker : VersionedMonoBehaviour {
-		/// <summary>
-		/// Enables drawing of the last calculated path using Gizmos.
-		/// The path will show up in green.
-		///
-		/// See: OnDrawGizmos
-		/// </summary>
-		public bool drawGizmos = true;
+        /// <summary>
+        /// Enables drawing of the last calculated path using Gizmos.
+        /// The path will show up in green.
+        ///
+        /// See: OnDrawGizmos
+        /// </summary>
+        public bool drawGizmos = true;
 
 		/// <summary>
 		/// Enables drawing of the non-postprocessed path using Gizmos.

@@ -34,6 +34,21 @@ public class Player_Collisions : MonoBehaviour
                 Destroy(other.gameObject);
             }
         }
+
+        if(other.tag == "Enemy_Bullet")
+        {
+            Destroy(other.gameObject);
+
+            int magnitude = 500; // Knock back force
+
+            Vector2 force = transform.position - other.transform.position;
+
+            force.Normalize();
+            GetComponent<Rigidbody2D>().AddForce(force * magnitude);
+
+            playerHealth--;
+            CheckIfDead();
+        }
     }
 
     void CheckIfDead()

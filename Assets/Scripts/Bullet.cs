@@ -9,28 +9,38 @@ public class Bullet : MonoBehaviour
     [SerializeField] float selfDestructTimer = 0 ;
 
     // Start is called before the first frame update
-    void Awake()
-    {
-        if (transform.root.GetComponent<SpriteRenderer>().flipX)
-        {
-            bulletRB.AddForce(Vector2.right * bulletSpeed);
-        }
-        else
-        {
-            bulletRB.AddForce(Vector2.left * bulletSpeed);
-        }
-    }
-
     private void Start()
     {
         if(transform.root.tag == "Enemy")
         {
-            selfDestructTimer = transform.root.GetComponent<Enemy_Shooting>().bulletDestroyTimer;
+            gameObject.tag = "Enemy_Bullet";
+
+            selfDestructTimer = transform.parent.GetComponent<Enemy_Shooting>().bulletDestroyTimer;
+
+            if (transform.root.GetComponent<SpriteRenderer>().flipX)
+            {
+                bulletRB.AddForce(Vector2.right * bulletSpeed);
+            }
+            else
+            {
+                bulletRB.AddForce(Vector2.left * bulletSpeed);
+            }
         }
         
         if(transform.root.tag == "Player")
         {
+            gameObject.tag = "Player_Bullet";
+
             selfDestructTimer = transform.root.GetComponent<Player_Shooting>().bulletDestroyTimer;
+
+            if (transform.root.GetComponent<SpriteRenderer>().flipX)
+            {
+                bulletRB.AddForce(Vector2.left * bulletSpeed);
+            }
+            else
+            {
+                bulletRB.AddForce(Vector2.right * bulletSpeed);
+            }
         }
     }
 
