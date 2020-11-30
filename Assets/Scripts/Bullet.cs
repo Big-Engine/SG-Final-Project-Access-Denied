@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] Rigidbody2D bulletRB = null;
     [SerializeField] float bulletSpeed = 0;
-    [SerializeField] float selfDestructTimer = 2;
+    [SerializeField] float selfDestructTimer = 0 ;
 
     // Start is called before the first frame update
     void Awake()
@@ -18,6 +18,19 @@ public class Bullet : MonoBehaviour
         else
         {
             bulletRB.AddForce(Vector2.left * bulletSpeed);
+        }
+    }
+
+    private void Start()
+    {
+        if(transform.root.tag == "Enemy")
+        {
+            selfDestructTimer = transform.root.GetComponent<Enemy_Shooting>().bulletDestroyTimer;
+        }
+        
+        if(transform.root.tag == "Player")
+        {
+            selfDestructTimer = transform.root.GetComponent<Player_Shooting>().bulletDestroyTimer;
         }
     }
 

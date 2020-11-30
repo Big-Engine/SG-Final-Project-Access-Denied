@@ -10,6 +10,9 @@ public class Player_Shooting : MonoBehaviour
 
     [SerializeField] float timeBetweenShots = 0;
     private float shootTimer = 0;
+
+    public float bulletDestroyTimer = 0;
+
     // Start is called before the first frame update
     void Start()
     {
