@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
             Destroy(collision.gameObject);
             if (health <= 0)
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
     }
