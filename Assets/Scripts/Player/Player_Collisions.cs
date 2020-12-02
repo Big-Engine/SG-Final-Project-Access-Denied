@@ -1,14 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_Collisions : MonoBehaviour
 {
     public int playerHealth = 3;
     public int maxHealth;
 
+    public Text healthText;
+
     private void Start()
     {
+        UpdateHP();
         maxHealth = playerHealth;
     }
     void OnTriggerEnter2D(Collider2D other)
@@ -23,6 +27,7 @@ public class Player_Collisions : MonoBehaviour
             GetComponent<Rigidbody2D>().AddForce(force * magnitude);
 
             playerHealth--;
+            UpdateHP();
             CheckIfDead();
         }
 
@@ -31,6 +36,7 @@ public class Player_Collisions : MonoBehaviour
             if(maxHealth != playerHealth)
             {
                 playerHealth++;
+                UpdateHP();
                 Destroy(other.gameObject);
             }
         }
@@ -47,6 +53,7 @@ public class Player_Collisions : MonoBehaviour
             GetComponent<Rigidbody2D>().AddForce(force * magnitude);
 
             playerHealth--;
+            UpdateHP();
             CheckIfDead();
         }
     }
@@ -59,6 +66,11 @@ public class Player_Collisions : MonoBehaviour
             //change scene, animations, etc.
             Destroy(gameObject);
         }
+    }
+
+    void UpdateHP()
+    {
+        healthText.text = "Health: " + playerHealth.ToString();
     }
 }
 
