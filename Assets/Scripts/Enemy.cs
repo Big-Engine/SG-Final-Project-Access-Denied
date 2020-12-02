@@ -17,7 +17,6 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("Enemy hit");
             health--;
-            Destroy(collision.gameObject);
             if (health <= 0)
             {
                 gameObject.SetActive(false);

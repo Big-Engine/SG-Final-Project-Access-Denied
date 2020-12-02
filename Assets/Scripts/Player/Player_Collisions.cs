@@ -43,7 +43,6 @@ public class Player_Collisions : MonoBehaviour
 
         if(other.tag == "Enemy_Bullet")
         {
-            Destroy(other.gameObject);
 
             int magnitude = 500; // Knock back force
 

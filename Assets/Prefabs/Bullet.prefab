@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1017222516272962738}
   - component: {fileID: 8809466198600712004}
   - component: {fileID: 5127082447503552804}
+  - component: {fileID: 3634049}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -147,3 +148,22 @@ MonoBehaviour:
   bulletRB: {fileID: 8809466198600712004}
   bulletSpeed: 500
   selfDestructTimer: 2
+--- !u!95 &3634049
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4625259408637808410}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 857b48f691cdf204794e3082f37c35ad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

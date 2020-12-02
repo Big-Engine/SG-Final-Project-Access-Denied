@@ -7,10 +7,12 @@ public class Bullet : MonoBehaviour
     [SerializeField] Rigidbody2D bulletRB = null;
     [SerializeField] float bulletSpeed = 0;
     [SerializeField] float selfDestructTimer = 0 ;
+    private float animationTimer = 0.2f;
 
     // Start is called before the first frame update
     private void Start()
     {
+        gameObject.GetComponent<Animator>().enabled = false;
         if(transform.root.tag == "Enemy")
         {
             gameObject.tag = "Enemy_Bullet";
@@ -48,11 +50,35 @@ public class Bullet : MonoBehaviour
     {
         if(selfDestructTimer <= 0)
         {
-            Destroy(gameObject);
+            DestroyBullet();
         }
         else
         {
             selfDestructTimer -= Time.deltaTime;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject != transform.root.gameObject)
+        {
+            DestroyBullet();
+            
+        }
+    }
+
+    private void DestroyBullet()
+    {
+        bulletRB.velocity = new Vector2(0, 0);
+        gameObject.GetComponent<Animator>().enabled = true;
+
+        if (animationTimer <= 0)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            animationTimer -= Time.deltaTime;
         }
     }
 
