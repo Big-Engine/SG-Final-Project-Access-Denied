@@ -9,6 +9,8 @@ public class Bullet : MonoBehaviour
     [SerializeField] float selfDestructTimer = 0 ;
     private float animationTimer = 0.2f;
 
+    private Player_Shooting playerShooting = null;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -31,6 +33,9 @@ public class Bullet : MonoBehaviour
         
         if(transform.root.tag == "Player")
         {
+
+            playerShooting = transform.root.GetComponent<Player_Shooting>();
+
             gameObject.tag = "Player_Bullet";
 
             selfDestructTimer = transform.root.GetComponent<Player_Shooting>().bulletDestroyTimer;
@@ -43,6 +48,8 @@ public class Bullet : MonoBehaviour
             {
                 bulletRB.AddForce(Vector2.right * bulletSpeed);
             }
+
+            ChangeColor();
         }
     }
 
@@ -62,8 +69,31 @@ public class Bullet : MonoBehaviour
     {
         if(collision.gameObject != transform.root.gameObject)
         {
-            DestroyBullet();
-            
+            if(collision.gameObject.tag != "PickUp")
+            {
+                if(collision.gameObject.tag != "Player_Bullet")
+                {
+                    DestroyBullet();
+                }
+            }
+        }
+    }
+
+    private void ChangeColor()
+    {
+        if (playerShooting.fireBullets)
+        {
+            GetComponent<SpriteRenderer>().color = Color.red;
+        }
+
+        if (playerShooting.waterBullets)
+        {
+            GetComponent<SpriteRenderer>().color = Color.blue;
+        }
+
+        if (playerShooting.poisonBullets)
+        {
+            GetComponent<SpriteRenderer>().color = Color.green;
         }
     }
 

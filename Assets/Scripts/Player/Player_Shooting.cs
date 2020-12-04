@@ -11,6 +11,10 @@ public class Player_Shooting : MonoBehaviour
     [SerializeField] float timeBetweenShots = 0;
     private float shootTimer = 0;
 
+    [HideInInspector] public bool fireBullets = false;
+    [HideInInspector] public bool waterBullets = false;
+    [HideInInspector] public bool poisonBullets = false;
+
     public float bulletDestroyTimer = 0;
 
     // Start is called before the first frame update
@@ -34,7 +38,30 @@ public class Player_Shooting : MonoBehaviour
         {
             shootTimer -= Time.deltaTime;
         }
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.name == "FirePickUp")
+        {
+            fireBullets = true;
+            waterBullets = false;
+            poisonBullets = false;
+        }
+
+        if (collision.gameObject.name == "WaterPickUp")
+        {
+            waterBullets = true;
+            fireBullets = false;
+            poisonBullets = false;
+        }
+
+        if (collision.gameObject.name == "PoisonPickUp")
+        {
+            poisonBullets = true;
+            waterBullets = false;
+            fireBullets = false;
+        }
     }
 
     private void Shoot()
