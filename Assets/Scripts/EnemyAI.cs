@@ -108,7 +108,14 @@ public class EnemyAI : MonoBehaviour
             return;
         }
 
-        //look at player?
+        if (target.position.x > transform.position.x)
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else if (target.position.x < transform.position.x)
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        }
 
         if (path == null)
         {
