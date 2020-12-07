@@ -44,28 +44,29 @@ public class Player_Shooting : MonoBehaviour
     {
         if(collision.gameObject.name == "FirePickUp")
         {
-            fireBullets = true;
-            waterBullets = false;
-            poisonBullets = false;
+            OnElementalCollision(true, false, false);
         }
 
         if (collision.gameObject.name == "WaterPickUp")
         {
-            waterBullets = true;
-            fireBullets = false;
-            poisonBullets = false;
+            OnElementalCollision(false, true, false);
         }
 
         if (collision.gameObject.name == "PoisonPickUp")
         {
-            poisonBullets = true;
-            waterBullets = false;
-            fireBullets = false;
+            OnElementalCollision(false, false, true);
         }
     }
 
     private void Shoot()
     {
         Instantiate(bulletPrefab, transform.position, Quaternion.identity, transform);
+    }
+
+    private void OnElementalCollision(bool toggleFire, bool toggleWater, bool togglePoison)
+    {
+        fireBullets = toggleFire;
+        waterBullets = toggleWater;
+        poisonBullets = togglePoison;
     }
 }
