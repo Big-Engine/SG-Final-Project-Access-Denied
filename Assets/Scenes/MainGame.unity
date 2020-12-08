@@ -568,25 +568,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7389641699620620902, guid: 67ba24eb409d233418227ce42ff3e0e0, type: 3}
-      propertyPath: bulletDestroyTimer
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7389641699620620904, guid: 67ba24eb409d233418227ce42ff3e0e0, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7389641699620620905, guid: 67ba24eb409d233418227ce42ff3e0e0, type: 3}
-      propertyPath: speed
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 7389641699620620905, guid: 67ba24eb409d233418227ce42ff3e0e0, type: 3}
-      propertyPath: jumpForce
-      value: 650
-      objectReference: {fileID: 0}
-    - target: {fileID: 7389641699620620906, guid: 67ba24eb409d233418227ce42ff3e0e0, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67ba24eb409d233418227ce42ff3e0e0, type: 3}

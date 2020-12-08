@@ -10,6 +10,10 @@ public class Player_Collisions : MonoBehaviour
 
     public Text healthText;
 
+    public AudioSource hurtSoundFX;
+    public AudioSource healthSoundFX;
+    public AudioSource pickUpSoundFX;
+
     private void Start()
     {
         UpdateHP();
@@ -28,6 +32,7 @@ public class Player_Collisions : MonoBehaviour
 
             playerHealth--;
             UpdateHP();
+            hurtSoundFX.Play();
             CheckIfDead();
         }
 
@@ -37,6 +42,7 @@ public class Player_Collisions : MonoBehaviour
             {
                 playerHealth++;
                 UpdateHP();
+                healthSoundFX.Play();
                 Destroy(other.gameObject);
             }
         }
@@ -51,9 +57,17 @@ public class Player_Collisions : MonoBehaviour
             force.Normalize();
             GetComponent<Rigidbody2D>().AddForce(force * magnitude);
 
+            Destroy(other.gameObject);
+
             playerHealth--;
             UpdateHP();
+            hurtSoundFX.Play();
             CheckIfDead();
+        }
+
+        if(other.tag == "PickUp")//element pick up
+        {
+            pickUpSoundFX.Play();
         }
     }
 

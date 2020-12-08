@@ -15,6 +15,7 @@ public class SpawnTrigger : MonoBehaviour
             Enemy1.SetActive(true);
             Enemy2.SetActive(true);
             Enemy3.SetActive(true);
+            Destroy(gameObject);
         }
     }
 }

@@ -17,6 +17,8 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] private bool isGrounded = false;
     private bool isMoving = false;
 
+    public AudioSource jumpSoundFX;
+
     void Start()
     {
         isGrounded = false;
@@ -46,6 +48,7 @@ public class Player_Movement : MonoBehaviour
             if(Input.GetAxisRaw("Vertical") > 0)
             {
                 Jump(isMoving);
+                jumpSoundFX.Play();
             }
         }
     }

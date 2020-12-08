@@ -6,6 +6,8 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] int health;
 
+    public AudioSource hitSoundFX;
+
     public void Start()
     {
         health = 2;
@@ -17,6 +19,7 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("Enemy hit");
             health--;
+            hitSoundFX.Play();
             if (health <= 0)
             {
                 gameObject.SetActive(false);

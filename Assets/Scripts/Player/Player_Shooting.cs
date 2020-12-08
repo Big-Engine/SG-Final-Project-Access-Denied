@@ -17,6 +17,8 @@ public class Player_Shooting : MonoBehaviour
 
     public float bulletDestroyTimer = 0;
 
+    public AudioSource shootSoundFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +63,7 @@ public class Player_Shooting : MonoBehaviour
     private void Shoot()
     {
         Instantiate(bulletPrefab, transform.position, Quaternion.identity, transform);
+        shootSoundFX.Play();
     }
 
     private void OnElementalCollision(bool toggleFire, bool toggleWater, bool togglePoison)
