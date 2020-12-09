@@ -29,7 +29,7 @@ public class Elemental_PickUps : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            transform.root.GetComponent<Elemental_Manager>().elementalOff = true;
+            transform.parent.GetComponent<Elemental_Manager>().elementalOff = true;
             gameObject.SetActive(false);
         }
     }
