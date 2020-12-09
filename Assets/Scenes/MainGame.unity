@@ -6200,11 +6200,23 @@ PrefabInstance:
     m_TransformParent: {fileID: 1196927506}
     m_Modifications:
     - target: {fileID: 3318053694780481506, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
+      propertyPath: Enemies.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318053694780481506, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
       propertyPath: Enemy1
       value: 
       objectReference: {fileID: 744931117}
     - target: {fileID: 3318053694780481506, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
       propertyPath: Enemy2
+      value: 
+      objectReference: {fileID: 1312215201}
+    - target: {fileID: 3318053694780481506, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
+      propertyPath: Enemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 744931117}
+    - target: {fileID: 3318053694780481506, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
+      propertyPath: Enemies.Array.data[1]
       value: 
       objectReference: {fileID: 1312215201}
     - target: {fileID: 3318053694780481507, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
@@ -17542,7 +17554,19 @@ PrefabInstance:
     m_TransformParent: {fileID: 1196927506}
     m_Modifications:
     - target: {fileID: 3318053694780481506, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
+      propertyPath: Enemies.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318053694780481506, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
       propertyPath: Enemy1
+      value: 
+      objectReference: {fileID: 670494502}
+    - target: {fileID: 3318053694780481506, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
+      propertyPath: Enemies.Array.data[3]
+      value: 
+      objectReference: {fileID: 670494502}
+    - target: {fileID: 3318053694780481506, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
+      propertyPath: Enemies.Array.data[0]
       value: 
       objectReference: {fileID: 670494502}
     - target: {fileID: 3318053694780481507, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
