@@ -5,7 +5,7 @@ using UnityEngine;
 public class Boss_Shooting : MonoBehaviour
 {
     [SerializeField] GameObject bossBullet = null;
-    float timer = 1f;
+    float timer = .75f;
 
     // Start is called before the first frame update
     void Update()
@@ -13,7 +13,7 @@ public class Boss_Shooting : MonoBehaviour
         if(timer <= 0)
         {
             Instantiate(bossBullet, transform.position, Quaternion.identity);
-            timer = 1f;
+            timer = .75f;
         }
         else
         {

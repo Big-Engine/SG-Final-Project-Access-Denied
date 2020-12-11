@@ -11,7 +11,7 @@ public class Boss_Attack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timer = Random.Range(10, 15);
+        timer = Random.Range(5, 7);
         boss_Shooting.enabled = false;
         enemyAI.enabled = true;
     }
@@ -32,7 +32,7 @@ public class Boss_Attack : MonoBehaviour
                 enemyAI.enabled = false;
                 boss_Shooting.enabled = true;
             }
-            timer = Random.Range(10, 15);
+            timer = Random.Range(5, 7);
         }
         else
         {

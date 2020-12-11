@@ -12,13 +12,13 @@ GameObject:
   - component: {fileID: 1681943670173560216}
   - component: {fileID: 1681943670173560219}
   - component: {fileID: 1681943670173560218}
-  - component: {fileID: 1681943670173560230}
   - component: {fileID: 1681943670173560221}
   - component: {fileID: 1681943670173560231}
   - component: {fileID: 4854440613687587132}
   - component: {fileID: 6041103876796614577}
   - component: {fileID: 2569093122093598420}
   - component: {fileID: 2569093122093598379}
+  - component: {fileID: 951953511}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -140,22 +140,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &1681943670173560230
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1681943670173560220}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0019178664, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.1885567
 --- !u!114 &1681943670173560221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,10 +154,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   updateRate: 2
-  speed: 300
+  speed: 500
   fMode: 0
   pathIsEnded: 0
-  nextWaypointDistance: 1.5
+  nextWaypointDistance: 1
 --- !u!114 &1681943670173560231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,3 +314,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossBullet: {fileID: 6218874641201790096, guid: 15eef91cc493f7f44975310b5ac77ca7, type: 3}
+--- !u!70 &951953511
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681943670173560220}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.22, y: 0.36999997}
+  m_Direction: 0
