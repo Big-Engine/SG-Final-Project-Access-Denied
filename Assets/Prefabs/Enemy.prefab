@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec01d26771ec03d47bcadb89b06cf702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 2
   hitSoundFX: {fileID: -1121097870780199639}
 --- !u!95 &6987669698520447908
 Animator:

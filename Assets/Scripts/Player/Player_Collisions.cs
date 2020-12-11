@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player_Collisions : MonoBehaviour
 {
@@ -69,15 +70,19 @@ public class Player_Collisions : MonoBehaviour
         {
             pickUpSoundFX.Play();
         }
+
+        if(other.tag == "WinGame")//Win the game when picked up
+        {
+            SceneManager.LoadScene("Win");
+        }
     }
 
     void CheckIfDead()
     {
         if (playerHealth <= 0)
         {
-            //player dies
-            //change scene, animations, etc.
-            Destroy(gameObject);
+            SceneManager.LoadScene("Lose");
+            //Destroy(gameObject);
         }
     }
 
