@@ -400,7 +400,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "How to Play:\n\n\nMove left - A\nMove Right- D\nJump- W\n\nShoot- Left
     Click\n\nRestore health with health pick ups.\n\nChange your bullet element with
-    element pick ups\n\nReach the end to win\n "
+    element pick ups\n\nDefeat the boss at the end to win\n "
 --- !u!222 &398319639
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -568,9 +568,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b38dadc511f4f3c469aa38c37c5fe4bc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: aa0581cdff1b82d43b98f180b8715ae0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.01
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0

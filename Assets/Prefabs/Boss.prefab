@@ -150,14 +150,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1681943670173560220}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1747d26346a4e2d4595c4a266d476c63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   updateRate: 2
-  speed: 500
+  speed: 400
   fMode: 0
   pathIsEnded: 0
   nextWaypointDistance: 1
@@ -453,9 +453,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b38dadc511f4f3c469aa38c37c5fe4bc, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1ba6f4b6262e2f645aa87674c72a56e2, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.01
+  m_Volume: 0.08
   m_Pitch: 1
   Loop: 1
   Mute: 0
