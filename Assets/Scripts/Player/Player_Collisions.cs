@@ -6,14 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class Player_Collisions : MonoBehaviour
 {
-    public int playerHealth = 3;
+    //health variables
+    public int playerHealth;
     public int maxHealth;
 
+    //health UI
     public Text healthText;
 
+    //sound effects
     public AudioSource hurtSoundFX;
     public AudioSource healthSoundFX;
     public AudioSource pickUpSoundFX;
+    public AudioSource bossSpawnSoundFX;
+
+    //music
+    public AudioSource music1;
 
     private void Start()
     {
@@ -41,7 +48,7 @@ public class Player_Collisions : MonoBehaviour
         {
             if(maxHealth != playerHealth)
             {
-                playerHealth++;
+                playerHealth = maxHealth;
                 UpdateHP();
                 healthSoundFX.Play();
                 Destroy(other.gameObject);
@@ -74,6 +81,11 @@ public class Player_Collisions : MonoBehaviour
         if(other.tag == "WinGame")//Win the game when picked up
         {
             SceneManager.LoadScene("Win");
+        }
+
+        if(other.tag == "Teleporter")
+        {
+            music1.Pause();
         }
     }
 

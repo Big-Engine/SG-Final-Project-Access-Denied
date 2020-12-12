@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3399998915119870464}
   m_Layer: 0
   m_Name: BossPickUp
-  m_TagString: Untagged
+  m_TagString: BossPickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
