@@ -17,7 +17,6 @@ public class Player_Collisions : MonoBehaviour
     public AudioSource hurtSoundFX;
     public AudioSource healthSoundFX;
     public AudioSource pickUpSoundFX;
-    public AudioSource bossSpawnSoundFX;
 
     //music
     public AudioSource music1;
