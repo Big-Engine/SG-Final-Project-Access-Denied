@@ -23,7 +23,7 @@ public class Boss_Bullet : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(0, 0, angle);
 
-        bulletRB.AddForce(new Vector2(-angleBetween.x, -angleBetween.y) * 800);
+        bulletRB.AddForce(new Vector2(-angleBetween.x, -angleBetween.y) * 400);
     }
 
     // Update is called once per frame

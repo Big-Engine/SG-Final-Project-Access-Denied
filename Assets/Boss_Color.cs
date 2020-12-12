@@ -13,7 +13,7 @@ public class Boss_Color : MonoBehaviour
 
     private void Start()
     {
-        timer = Random.Range(2, 5);
+        timer = Random.Range(8, 12);
         ChangeColor();
     }
     void Update()
@@ -21,7 +21,7 @@ public class Boss_Color : MonoBehaviour
         if(timer <= 0)
         {
             ChangeColor();
-            timer = Random.Range(2, 5);
+            timer = Random.Range(8, 12);
         }
         else
         {

@@ -1094,35 +1094,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
-    - target: {fileID: 1681943670173560220, guid: 185cefc40c0993e43a8cc84a4f802bfa, type: 3}
-      propertyPath: m_TagString
-      value: Boss
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 185cefc40c0993e43a8cc84a4f802bfa, type: 3}
---- !u!212 &3814608594050219891 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 1681943670173560216, guid: 185cefc40c0993e43a8cc84a4f802bfa, type: 3}
-  m_PrefabInstance: {fileID: 741862970077399270}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3814608594050219895 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1681943670173560220, guid: 185cefc40c0993e43a8cc84a4f802bfa, type: 3}
   m_PrefabInstance: {fileID: 741862970077399270}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3814608594050219896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3814608594050219895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cb820e456a34d445b9ae3bed9e8fe59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bossRenderer: {fileID: 3814608594050219891}
 --- !u!1001 &6341027620185904388
 PrefabInstance:
   m_ObjectHideFlags: 0

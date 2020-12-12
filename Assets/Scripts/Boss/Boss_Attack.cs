@@ -21,16 +21,16 @@ public class Boss_Attack : MonoBehaviour
     {
         if(timer <= 0)
         {
-            int randomAttack = Random.Range(0, 2);
+            int randomAttack = Random.Range(0, 3);
             if(randomAttack == 0)
-            {
-                enemyAI.enabled = true;
-                boss_Shooting.enabled = false;
-            }
-            else
             {
                 enemyAI.enabled = false;
                 boss_Shooting.enabled = true;
+            }
+            else
+            {
+                enemyAI.enabled = true;
+                boss_Shooting.enabled = false;
             }
             timer = Random.Range(5, 7);
         }

@@ -6,6 +6,8 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] int health;
 
+    [SerializeField] GameObject winGame = null;
+
     public AudioSource hitSoundFX;
 
     private void OnTriggerEnter2D(Collider2D collision)//needs testing
@@ -42,6 +44,10 @@ public class Enemy : MonoBehaviour
     {
         if (health <= 0)
         {
+            if(gameObject.tag == "Boss")
+            {
+                Instantiate(winGame, transform.position, Quaternion.identity);
+            }
             gameObject.SetActive(false);
         }
     }
