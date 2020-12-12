@@ -47,8 +47,11 @@ public class Player_Movement : MonoBehaviour
         {
             if(Input.GetAxisRaw("Vertical") > 0)
             {
-                Jump(isMoving);
-                jumpSoundFX.Play();
+                if(playerRB.velocity.y <= 15)
+                {
+                    Jump(isMoving);
+                    jumpSoundFX.Play();
+                }
             }
         }
     }
