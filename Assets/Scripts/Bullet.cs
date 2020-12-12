@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] Rigidbody2D bulletRB = null;
     [SerializeField] float bulletSpeed = 0;
     [SerializeField] float selfDestructTimer = 0 ;
+    [SerializeField] AudioSource destroySound = null;
     private float animationTimer = 0.2f;
 
     private Player_Shooting playerShooting = null;
@@ -14,6 +15,8 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        destroySound.enabled = false;
+
         gameObject.GetComponent<Animator>().enabled = false;
         if(transform.root.tag == "Enemy")
         {
@@ -103,6 +106,11 @@ public class Bullet : MonoBehaviour
         }
     }
 
+    private void PlayDestroy()
+    {
+        destroySound.enabled = true;
+    }
+
     private void CheckCollisions(Collider2D collision)
     {
         if (collision.gameObject != transform.root.gameObject)
@@ -120,6 +128,19 @@ public class Bullet : MonoBehaviour
                     }
                 }
             }
+        }
+
+        if(collision.gameObject.tag == "Boss")
+        {
+            if(gameObject.GetComponent<SpriteRenderer>().color == collision.GetComponent<SpriteRenderer>().color)
+            {
+                PlayDestroy();
+            }
+        }
+
+        if(collision.gameObject.tag == "Enemy")
+        {
+            PlayDestroy();
         }
     }
 
