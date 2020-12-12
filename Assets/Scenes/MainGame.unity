@@ -4370,6 +4370,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner5
       objectReference: {fileID: 0}
+    - target: {fileID: 3318053694780481507, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
     - target: {fileID: 3318053694780481519, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
       propertyPath: m_LocalPosition.x
       value: -39.56
@@ -7503,6 +7507,10 @@ PrefabInstance:
     - target: {fileID: 3318053694780481507, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
       propertyPath: m_Name
       value: EnemySpawner2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318053694780481507, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
+      propertyPath: m_TagString
+      value: Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 3318053694780481519, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10820,6 +10828,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner3
       objectReference: {fileID: 0}
+    - target: {fileID: 3318053694780481507, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
     - target: {fileID: 3318053694780481519, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.09
@@ -12181,6 +12193,10 @@ PrefabInstance:
     - target: {fileID: 3318053694780481507, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
       propertyPath: m_Name
       value: EnemySpawner4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318053694780481507, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
+      propertyPath: m_TagString
+      value: Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 3318053694780481519, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14766,6 +14782,10 @@ PrefabInstance:
     - target: {fileID: 3318053694780481507, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
       propertyPath: m_Name
       value: EnemySpawner6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318053694780481507, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
+      propertyPath: m_TagString
+      value: Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 3318053694780481519, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18281,6 +18301,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner7
       objectReference: {fileID: 0}
+    - target: {fileID: 3318053694780481507, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
+      propertyPath: m_TagString
+      value: Spawner
+      objectReference: {fileID: 0}
     - target: {fileID: 3318053694780481519, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18.45
@@ -21132,6 +21156,10 @@ PrefabInstance:
     - target: {fileID: 3318053694780481507, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
       propertyPath: m_Name
       value: EnemySpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318053694780481507, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
+      propertyPath: m_TagString
+      value: Spawner
       objectReference: {fileID: 0}
     - target: {fileID: 3318053694780481519, guid: 9063964c9bc3c0942bee45d855dfdc79, type: 3}
       propertyPath: m_LocalPosition.x

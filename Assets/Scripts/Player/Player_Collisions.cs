@@ -22,7 +22,7 @@ public class Player_Collisions : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Enemy")
+        if (other.tag == "Enemy" || other.tag == "Boss")
         {
             int magnitude = 1500; // Knock back force
 

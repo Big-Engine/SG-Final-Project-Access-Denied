@@ -67,16 +67,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject != transform.root.gameObject)
-        {
-            if(collision.gameObject.tag != "PickUp")
-            {
-                if(collision.gameObject.tag != "Player_Bullet")
-                {
-                    DestroyBullet();
-                }
-            }
-        }
+        CheckCollisions(collision);
     }
 
     private void ChangeColor()
@@ -109,6 +100,26 @@ public class Bullet : MonoBehaviour
         else
         {
             animationTimer -= Time.deltaTime;
+        }
+    }
+
+    private void CheckCollisions(Collider2D collision)
+    {
+        if (collision.gameObject != transform.root.gameObject)
+        {
+            if(collision.gameObject.tag != "Spawner")
+            {
+                if (collision.gameObject.tag != "PickUp")
+                {
+                    if (collision.gameObject.tag != "Player_Bullet")
+                    {
+                        if (collision.gameObject.tag != "Enemy_Bullet")
+                        {
+                            DestroyBullet();
+                        }
+                    }
+                }
+            }
         }
     }
 

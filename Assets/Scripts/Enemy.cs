@@ -8,17 +8,41 @@ public class Enemy : MonoBehaviour
 
     public AudioSource hitSoundFX;
 
-    public void OnTriggerEnter2D(Collider2D collision)//needs testing
+    private void OnTriggerEnter2D(Collider2D collision)//needs testing
     {
-        if (collision.tag == "Player_Bullet")
+        if(gameObject.tag == "Boss")
         {
-            Debug.Log("Enemy hit");
-            health--;
-            hitSoundFX.Play();
-            if (health <= 0)
+            if (collision.tag == "Player_Bullet")
             {
-                gameObject.SetActive(false);
+                if(collision.GetComponent<SpriteRenderer>().color == gameObject.GetComponent<SpriteRenderer>().color)
+                {
+                    TakeDamage();
+                    CheckHealth();
+                }
             }
+        }
+
+        if(gameObject.tag == "Enemy")
+        {
+            if(collision.tag == "Player_Bullet")
+            {
+                TakeDamage();
+                CheckHealth();
+            }
+        }
+    }
+
+    private void TakeDamage()
+    {
+        health--;
+        hitSoundFX.Play();
+    }
+
+    private void CheckHealth()
+    {
+        if (health <= 0)
+        {
+            gameObject.SetActive(false);
         }
     }
 }

@@ -13,6 +13,8 @@ TagManager:
   - Enemy_Bullet
   - PickUp
   - WinGame
+  - Boss
+  - Spawner
   layers:
   - Default
   - TransparentFX
