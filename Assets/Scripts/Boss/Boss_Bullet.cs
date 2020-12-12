@@ -9,7 +9,7 @@ public class Boss_Bullet : MonoBehaviour
 
 
     float animationTimer = .2f;
-    float timer = 2f;
+    float timer = 3f;
 
     // Start is called before the first frame update
     void Start()

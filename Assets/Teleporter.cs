@@ -13,6 +13,7 @@ public class Teleporter : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             playerTransform.position = new Vector3(44.5f, 113, 0);
+            playerTransform.gameObject.GetComponent<Player_Shooting>().bulletDestroyTimer = 1f;
 
             mainCamera.GetComponent<Follow>().enabled = false;
             background.GetComponent<Follow>().enabled = false;
