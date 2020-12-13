@@ -30,17 +30,7 @@ public class Player_Collisions : MonoBehaviour
     {
         if (other.tag == "Enemy" || other.tag == "Boss")
         {
-            int magnitude = 1500; // Knock back force
-
-            Vector2 force = transform.position - other.transform.position;
-
-            force.Normalize();
-            GetComponent<Rigidbody2D>().AddForce(force * magnitude);
-
-            playerHealth--;
-            UpdateHP();
-            hurtSoundFX.Play();
-            CheckIfDead();
+            TakeDamage(1250, other);
         }
 
         if(other.tag == "Health")
@@ -57,19 +47,7 @@ public class Player_Collisions : MonoBehaviour
         if(other.tag == "Enemy_Bullet")
         {
 
-            int magnitude = 500; // Knock back force
-
-            Vector2 force = transform.position - other.transform.position;
-
-            force.Normalize();
-            GetComponent<Rigidbody2D>().AddForce(force * magnitude);
-
-            Destroy(other.gameObject);
-
-            playerHealth--;
-            UpdateHP();
-            hurtSoundFX.Play();
-            CheckIfDead();
+            TakeDamage(500, other);
         }
 
         if(other.tag == "PickUp")//element pick up
@@ -109,6 +87,21 @@ public class Player_Collisions : MonoBehaviour
             healthText.color = Color.cyan;
             healthText.text = "Health: " + playerHealth.ToString();
         }
+    }
+
+    private void TakeDamage(int knockBackForce, Collider2D other)
+    {
+        int magnitude = knockBackForce; // Knock back force
+
+        Vector2 angle = transform.position - other.transform.position;
+
+        angle.Normalize();
+        GetComponent<Rigidbody2D>().AddForce(angle * magnitude);
+
+        playerHealth--;
+        UpdateHP();
+        hurtSoundFX.Play();
+        CheckIfDead();
     }
 }
 

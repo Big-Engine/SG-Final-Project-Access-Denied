@@ -17,13 +17,7 @@ public class Boss_Bullet : MonoBehaviour
         gameObject.GetComponent<Animator>().enabled = false;
         player = GameObject.Find("Player");
 
-        Vector3 angleBetween = (transform.position - player.transform.position).normalized;
-
-        float angle = Mathf.Atan2(angleBetween.y, angleBetween.x) * Mathf.Rad2Deg + 180;
-
-        transform.rotation = Quaternion.Euler(0, 0, angle);
-
-        bulletRB.AddForce(new Vector2(-angleBetween.x, -angleBetween.y) * 400);
+        TargetPlayer();
     }
 
     // Update is called once per frame
@@ -60,5 +54,16 @@ public class Boss_Bullet : MonoBehaviour
         {
             animationTimer -= Time.deltaTime;
         }
+    }
+
+    private void TargetPlayer()
+    {
+        Vector3 angleBetween = (transform.position - player.transform.position).normalized;
+
+        float angle = Mathf.Atan2(angleBetween.y, angleBetween.x) * Mathf.Rad2Deg + 180;
+
+        transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        bulletRB.AddForce(new Vector2(-angleBetween.x, -angleBetween.y) * 400);
     }
 }
