@@ -99,7 +99,16 @@ public class Player_Collisions : MonoBehaviour
 
     void UpdateHP()
     {
-        healthText.text = "Health: " + playerHealth.ToString();
+        if (playerHealth == 1)
+        {
+            healthText.color = Color.red;
+            healthText.text = "Health: " + playerHealth.ToString();
+        }
+        else
+        {
+            healthText.color = Color.cyan;
+            healthText.text = "Health: " + playerHealth.ToString();
+        }
     }
 }
 
