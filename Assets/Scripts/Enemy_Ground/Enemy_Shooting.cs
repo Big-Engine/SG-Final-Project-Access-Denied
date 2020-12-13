@@ -8,8 +8,6 @@ public class Enemy_Shooting : MonoBehaviour
 
     [SerializeField] Transform rightPosTransform = null;
 
-    [SerializeField] Transform playerTransform = null;
-
     [SerializeField] Transform bulletPrefab = null;
 
     [SerializeField] Transform firePoint = null;

@@ -20,39 +20,12 @@ public class Bullet : MonoBehaviour
         gameObject.GetComponent<Animator>().enabled = false;
         if(transform.root.tag == "Enemy")
         {
-            gameObject.tag = "Enemy_Bullet";
-
-            selfDestructTimer = transform.parent.GetComponent<Enemy_Shooting>().bulletDestroyTimer;
-
-            if (transform.root.GetComponent<SpriteRenderer>().flipX)
-            {
-                bulletRB.AddForce(Vector2.right * bulletSpeed);
-            }
-            else
-            {
-                bulletRB.AddForce(Vector2.left * bulletSpeed);
-            }
+            AdjustToParent("Enemy");
         }
         
         if(transform.root.tag == "Player")
         {
-
-            playerShooting = transform.root.GetComponent<Player_Shooting>();
-
-            gameObject.tag = "Player_Bullet";
-
-            selfDestructTimer = transform.root.GetComponent<Player_Shooting>().bulletDestroyTimer;
-
-            if (transform.root.GetComponent<SpriteRenderer>().flipX)
-            {
-                bulletRB.AddForce(Vector2.left * bulletSpeed);
-            }
-            else
-            {
-                bulletRB.AddForce(Vector2.right * bulletSpeed);
-            }
-
-            ChangeColor();
+            AdjustToParent("Player");
         }
     }
 
@@ -141,6 +114,45 @@ public class Bullet : MonoBehaviour
         if(collision.gameObject.tag == "Enemy")
         {
             PlayDestroy();
+        }
+    }
+
+    private void AdjustToParent(string parentTag)
+    {
+        if(parentTag == "Enemy")
+        {
+            gameObject.tag = "Enemy_Bullet";
+
+            selfDestructTimer = transform.parent.GetComponent<Enemy_Shooting>().bulletDestroyTimer;
+
+            if (transform.root.GetComponent<SpriteRenderer>().flipX)
+            {
+                bulletRB.AddForce(Vector2.right * bulletSpeed);
+            }
+            else
+            {
+                bulletRB.AddForce(Vector2.left * bulletSpeed);
+            }
+        }
+
+        if(parentTag == "Player")
+        {
+            playerShooting = transform.root.GetComponent<Player_Shooting>();
+
+            gameObject.tag = "Player_Bullet";
+
+            selfDestructTimer = transform.root.GetComponent<Player_Shooting>().bulletDestroyTimer;
+
+            if (transform.root.GetComponent<SpriteRenderer>().flipX)
+            {
+                bulletRB.AddForce(Vector2.left * bulletSpeed);
+            }
+            else
+            {
+                bulletRB.AddForce(Vector2.right * bulletSpeed);
+            }
+
+            ChangeColor();
         }
     }
 

@@ -16,17 +16,22 @@ public class Elemental_Manager : MonoBehaviour
         {
             if(timer <= 0)
             {
-                for (int i = 0; i < elementalPickUps.Count; i++)
-                {
-                    elementalPickUps[i].SetActive(true);
-                }
-                elementalOff = false;
-                timer = 3;
+                EnablePickUps();
             }
             else
             {
                 timer -= Time.deltaTime
 ;            }
         }
+    }
+
+    private void EnablePickUps()
+    {
+        for (int i = 0; i < elementalPickUps.Count; i++)
+        {
+            elementalPickUps[i].SetActive(true);
+        }
+        elementalOff = false;
+        timer = 3;
     }
 }
